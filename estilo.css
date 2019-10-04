@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Arimo:700i&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: dimgray;
+    height: 100vh; width: 100vw;
+}
+canvas{
+    cursor: url("img/mira4.png"), auto;
+    position: absolute;
+    background-color: transparent;
+    max-height: 100vh;
+    max-width: 100vw;
+    z-index: 2;
+}
+p{
+    z-index: 1;
+    color: #eedb9f;
+    font-size: 22px;
+    font-family: "Varela Round", Arial;
+}
+#pontuacao{
+    display: flex;
+    text-align: start;
+    position: fixed;
+    width: 98%;
+    margin-left: 2%;
+}
+#infoZumbis{
+    display: flex;
+    text-align: right;
+    position: fixed;
+    justify-content: flex-end;
+    width: 98%;
+    margin-right: 2%;
+}
+#gameOver{
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    width: 60%;
+    height: 20%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #eedb9f;
+    color: rgb(21, 24, 27);
+    border: solid 5px rgb(21, 24, 27);
+    z-index: 4;
+}
+#gameOver p{
+    color: rgb(21, 24, 27);
+    font-size: 40px;
+    font-family: "Arimo", Arial;
+}
+#comecar{
+    width: 220px; height: 80px;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: rgb(21, 24, 27);
+    color: #eedb9f;
+    border: none;
+}
+#btnStart{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(21, 24, 27, 0.8);
+    color: #eedb9f;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 5;
+}
+#btnStart p,{
+    font-family: "Arimo", Arial;
+    font-size: 50px;
+}
+/*castelo*/
+#paisagem{
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    max-width: 100vw;
+    position: absolute;
+    display: flex;
+}
+#ceu{
+    display: inherit;
+    width: 100%;
+    height: 40%;
+    top: 0%;
+    position: absolute;
+    background-color: rgb(21, 24, 27);
+}
+#lua{
+    position: absolute;
+    width: 10%;
+    height: 40%;
+    background-color: rgb(230, 200, 165);
+    top: 5%;
+    left: 8%;
+    border-radius: 50%;
+}
+
+#grama{
+    display: inherit;
+    width: 100%;
+    height: 60%;
+    top: 40%;
+    position: absolute;
+    background-color: rgb(33, 54, 41);
+}
+#chao{
+    position: absolute;
+    width: 100%;
+    height: 18%;
+    bottom: 10%;
+    background-color: rgb(147, 139, 116);
+}
+
+#castelo{
+    height: 85%;
+    width: 50%;
+    bottom: 15%;
+    right: 0;
+    position: absolute;
+    background-color: transparent;
+    /*transform: skewY(2deg);*/
+}
+#primAndar{
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0%;
+    background-color: #2b363b;
+    display: flex;
+    justify-content: center;
+}
+#porta{
+    position: absolute;
+    width: 16%;
+    height: 80%;
+    bottom: 0%;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    background-color: #422e24;
+}
+#abertura{
+    position: absolute;
+    width: 45%;
+    height: 95%;
+    bottom: 0%;
+    left: 5%;
+    border-top-left-radius: 85%;
+    background-color: #F59793;
+}
+#fechamento{
+    position: absolute;
+    width: 45%;
+    height: 95%;
+    bottom: 0%;
+    right: 5%;
+    border-top-right-radius: 85%;
+    background-color: #422e24;
+    cursor: url("img/mira4.png"), auto;
+    z-index: 3;
+}
+#segAndar{
+    position: absolute;
+    width: 70%;
+    height: 30%;
+    bottom: 30%;
+    right: 0%;
+    padding-right: 10%;
+    padding-left: 10%;
+    background-color: #313d42;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#janelas{
+    position: relative;
+    width: 15%;
+    height: 70%;
+    bottom: 0%;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    background-color: #F59793;
+    border: solid #422e24 2px;
+}
+#torres{
+    position: absolute;
+    width: 90%;
+    height: 40%;
+    bottom: 60%;
+    right: 0%;
+    background-color: transparent;
+    display: flex;
+    /*justify-content: space-between;
+    */align-items: flex-end;
+}
+#torre1{
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    bottom: 0%;
+    left: 5%;
+    border-top-right-radius: 150%;
+    border-top-left-radius: 150%;
+    background-color: #2b363b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#janelaPeq{
+    position: relative;
+    width: 80%;
+    height: 30%;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    background-color: #F59793;
+    border: solid #3b3734 2px;
+}
+#telhado{
+    position: absolute;
+    width: 0;
+    height: 0; 
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+    border-bottom: 70px solid #2b363b;
+    top: 0%;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#torre2{
+    position: absolute;
+    width: 28%;
+    height: 100%;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2b363b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#janelaMed{
+    position: relative;
+    width: 70%;
+    height: 40%;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    background-color: #F59793;
+    border: solid #3b3734 2px;
+}
+
+#torre3{
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    bottom: 0%;
+    right: 0%;
+    border-top-right-radius: 150%;
+    border-top-left-radius: 150%;
+    background-color: #2b363b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#torre3 #telhado{
+    border-right: 0px solid transparent;
+    align-items: flex-start;
+}
