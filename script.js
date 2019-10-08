@@ -189,9 +189,9 @@ function atualizaPlacar(){
 }
 
 function atualizaTempo(){
-    console.log("Att tempo");
-    tempoCriacao -= 320;
-    if(tempoCriacao > 3000){
+   console.log("Att tempo");
+   if(tempoCriacao > 2500){
+        tempoCriacao -= 320;
         clearInterval(tempCriaZumbi);
         tempCriaZumbi = setInterval(criarZumbi, tempoCriacao);
     }else{
